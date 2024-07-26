@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { createTamagui, TamaguiProvider } from "tamagui";
+import { createTamagui, PortalProvider, TamaguiProvider } from "tamagui";
 import { config } from "@tamagui/config/v3";
 import { useFonts } from "expo-font";
 const tamaguiConfig = createTamagui(config);
@@ -27,5 +27,9 @@ export default function AppContainer({ children }: Props) {
   if (!loaded) {
     return null;
   }
-  return <TamaguiProvider config={tamaguiConfig}>{children}</TamaguiProvider>;
+  return (
+    <TamaguiProvider config={tamaguiConfig}>
+      <PortalProvider shouldAddRootHost>{children}</PortalProvider>
+    </TamaguiProvider>
+  );
 }
