@@ -1,5 +1,5 @@
 import { AlertDialog, Button, XStack, YStack } from "tamagui";
-export default    function AlertDialogDemo() {
+export default function AppAlert() {
   return (
     <AlertDialog native>
       <AlertDialog.Trigger asChild>

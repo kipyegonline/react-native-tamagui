@@ -14,43 +14,18 @@ import AppContainer from "./components/AppContainer";
 import AppAlert from "./components/AppAlert";
 import AppList from "./components/AppList";
 import { ScreenContainer } from "./components/ScreenContainer";
-
-const MyView = styled(View, {
-  borderWidth: 5,
-  borderColor: "magenta",
-  height: 100,
-  width: "100%",
-  my: 10,
-});
+import NavigationContainerComponent from "./components/NavigationContainer";
 
 export default function App() {
   return (
+    <>
+      <NavigationContainerComponent />
+      <StatusBar style="auto" />
+    </>
+  );
+  return (
     <AppContainer>
-      <ScreenContainer title="Tamagui by Vince.">
-        <View style={styles.container}>
-          <Text color="$color.primary">
-            If you feel it could you let me know......
-          </Text>
-          <Text>I am not asking for a miracle....</Text>
-          <Button onPress={() => {}} my={25} backgroundColor={"$red"}>
-            What is tamagui?
-          </Button>
-          <MyView hoverStyle={{ backgroundColor: "cyan" }}></MyView>
-
-          <AppAlert />
-          <AppList />
-          <StatusBar style="auto" />
-        </View>
-      </ScreenContainer>
+      <ScreenContainer title="Tamagui by Vince."></ScreenContainer>
     </AppContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

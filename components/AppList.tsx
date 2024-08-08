@@ -21,6 +21,7 @@ export default function AppList() {
         p={8}
         color="#fff"
       />
+      <Text color={"cyan"}>The pryer to return the money.....</Text>
       {/** <Image source={{ uri: require("../assets/IMG_0328.JPG") }} /> */}
       {/**  <XStack>
         <Avatar circular>
@@ -29,14 +30,15 @@ export default function AppList() {
       </XStack> */}
       <YStack gap={8}>
         <Input placeholder="Enter email" keyboardType="email-address" />
-        <TextArea placeholder="Enter message" />
+        <TextArea placeholder="Enter message" p={4} />
         <Button
           size={"large"}
           bg="skyblue"
           color={"white"}
+          p={4}
           circular
           onPress={() => {
-            alert("<______Pressed______>");
+            alert("<====|Pressed|====>");
           }}
         >
           Submit info...

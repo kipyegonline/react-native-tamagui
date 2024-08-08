@@ -1,6 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { Stack, Text } from "tamagui";
+import { Stack, Text, ScrollView } from "tamagui";
 import { FooterButton } from "./FooterButton";
 import { MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
 type Props = { title: string; children: React.ReactNode };
@@ -8,18 +8,16 @@ type Props = { title: string; children: React.ReactNode };
 export const ScreenContainer = ({ title, children }: Props) => {
   const [selected, setSelected] = React.useState(0);
   //const { top } = useSafeAreaInsets();
-  const Home = null,
-    Settings = null,
-    HelpCircle = null,
-    Contact = null;
+
   const top = 32,
     bottom = 32;
   return (
     <>
-      <StatusBar backgroundColor="#3700B3" style="light" />
-      <Stack h={top} bg="#6200ee" />
-      <Stack
-        bg="#6200ee"
+      <StatusBar backgroundColor="#1e1e1e" style="light" />
+
+      {/**<Stack h={top} bg="#6200ee" /> 
+       *  <Stack
+        bg="rgba(0,0,0,.6)"
         py="$4"
         justifyContent="center"
         alignItems="center"
@@ -29,13 +27,16 @@ export const ScreenContainer = ({ title, children }: Props) => {
           {title}
         </Text>
       </Stack>
-      <Stack flex={1}>{children}</Stack>
+      */}
+
+      <ScrollView flex={1}>{children}</ScrollView>
       {/*Footer bottom */}
       <Stack
         bg="#6200ee"
         alignItems="center"
         flexDirection="row"
         paddingBottom={bottom}
+        mt={9}
       >
         <FooterButton
           title="Home"
@@ -58,7 +59,7 @@ export const ScreenContainer = ({ title, children }: Props) => {
         />
 
         <FooterButton
-          title="Contact"
+          title="Contact us"
           icon={<MaterialCommunityIcons name="phone" />}
           selected={selected === 3}
           onPress={() => setSelected(3)}
