@@ -1,10 +1,26 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { View, Text, Button, styled, H1, H3, H2 } from "tamagui";
+import {
+  View,
+  Text,
+  Button,
+  styled,
+  H1,
+  H3,
+  H2,
+  Stack,
+  Label,
+  TextArea,
+  YStack,
+  TextInput,
+  Avatar,
+  XStack,
+} from "tamagui";
 
 import AppAlert from "../components/AppAlert";
 import AppList from "../components/AppList";
 import { ScreenContainer } from "../components/ScreenContainer";
+import AppAccordion from "../components/AppAccordion";
 const MyView = styled(View, {
   borderWidth: 5,
   borderColor: "magenta",
@@ -13,6 +29,7 @@ const MyView = styled(View, {
   my: 10,
 });
 export default function Home() {
+  const [text, setText] = React.useState("");
   return (
     <ScreenContainer title="Center">
       <View style={styles.container}>
@@ -22,15 +39,40 @@ export default function Home() {
           miracle..
         </Text>
         <Text>I am not asking for a miracle....</Text>
-        <Button onPress={() => {}} my={25} backgroundColor={"$red"}>
-          What is tamagui?
-        </Button>
+        <XStack>
+          <Avatar circular size={125}>
+            <Avatar.Image src={require("../assets/icon.png")} />
+          </Avatar>
+        </XStack>
 
-        <MyView hoverStyle={{ backgroundColor: "cyan" }}></MyView>
+        <Button
+          onPress={() => {}}
+          my={25}
+          //backgroundColor={"royalblue"}
+          color="white"
+          bg="royalblue"
+        >
+          This is tamagui
+        </Button>
 
         <AppAlert />
         <AppList />
+        <AppAccordion />
       </View>
+      <YStack p={14}>
+        <Label>Enter Message </Label>
+        <TextArea
+          onChangeText={(text) => setText(text)}
+          value={text}
+          borderWidth={2}
+          // paddingVertical={0}
+
+          p={6}
+        />
+        <Button bg="magenta" color="white" mt={5}>
+          Submit
+        </Button>
+      </YStack>
     </ScreenContainer>
   );
 }

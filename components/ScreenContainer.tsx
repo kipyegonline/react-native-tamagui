@@ -60,7 +60,7 @@ export const ScreenContainer = ({ title, children }: Props) => {
 
         <FooterButton
           title="Contact us"
-          icon={<MaterialCommunityIcons name="phone" />}
+          icon={<MaterialCommunityIcons name="phone" size={18} />}
           selected={selected === 3}
           onPress={() => setSelected(3)}
         />
