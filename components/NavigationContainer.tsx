@@ -5,8 +5,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AppAlert from "./AppAlert";
 import AppContainer from "./AppContainer";
 import Home from "../screens/Home";
+import SignUpForm from "../screens/SignUp";
 
-type RootStackLists = { Home: undefined };
+export type RootStackLists = { Home: undefined; SignUp: undefined };
 const Stack = createNativeStackNavigator<RootStackLists>();
 export default function NavigationContainerComponent() {
   return (
@@ -14,6 +15,7 @@ export default function NavigationContainerComponent() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="SignUp" component={SignUpForm} />
         </Stack.Navigator>
       </NavigationContainer>
     </AppContainer>

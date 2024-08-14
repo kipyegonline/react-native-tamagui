@@ -15,12 +15,19 @@ import {
   TextInput,
   Avatar,
   XStack,
+  Paragraph,
+  Separator,
+  Square,
+  Image,
 } from "tamagui";
 
 import AppAlert from "../components/AppAlert";
 import AppList from "../components/AppList";
 import { ScreenContainer } from "../components/ScreenContainer";
 import AppAccordion from "../components/AppAccordion";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackLists } from "../components/NavigationContainer";
+import AvatarComponent from "../components/Avatat.component";
 const MyView = styled(View, {
   borderWidth: 5,
   borderColor: "magenta",
@@ -28,32 +35,23 @@ const MyView = styled(View, {
   width: "100%",
   my: 10,
 });
-export default function Home() {
+type Props = NativeStackScreenProps<RootStackLists, "Home">;
+export default function Home({ navigation }: Props) {
   const [text, setText] = React.useState("");
   return (
     <ScreenContainer title="Center">
       <View style={styles.container}>
-        <H2 pb={3}> Explore...</H2>
+        <H2 pb={3}> Explore Tamagui...</H2>
         <Text color="$color.primary">
           If you feel it could you let me know......i am not asking for
           miracle..
         </Text>
         <Text>I am not asking for a miracle....</Text>
-        <XStack>
-          <Avatar circular size={125}>
-            <Avatar.Image src={require("../assets/icon.png")} />
-          </Avatar>
-        </XStack>
+        <Stack mt={25}>
+          <Image source={require("../assets/home2-hero.jpg")} />
+        </Stack>
 
-        <Button
-          onPress={() => {}}
-          my={25}
-          //backgroundColor={"royalblue"}
-          color="white"
-          bg="royalblue"
-        >
-          This is tamagui
-        </Button>
+        <AvatarComponent />
 
         <AppAlert />
         <AppList />
@@ -69,10 +67,33 @@ export default function Home() {
 
           p={6}
         />
-        <Button bg="magenta" color="white" mt={5}>
-          Submit
+        <Button
+          bg="magenta"
+          color="white"
+          mt={5}
+          onPress={() => navigation.navigate("SignUp")}
+        >
+          Sign Up
         </Button>
       </YStack>
+      <Stack p={4}>
+        <Paragraph>
+          Tamagui UI, cross platform component for developing web and mobile
+          applications.......
+        </Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          eveniet quia consequatur. Eligendi nesciunt nulla incidunt repellat
+          eum obcaecati, sit excepturi commodi, error, non natus!
+        </Paragraph>
+        <Separator marginVertical={5} alignSelf="stretch" />
+        <Square
+          size={100}
+          backgroundColor="rebeccapurple"
+          margin={10}
+          elevation={20}
+        />
+      </Stack>
     </ScreenContainer>
   );
 }
