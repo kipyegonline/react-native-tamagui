@@ -22,15 +22,16 @@ export default function AppList() {
         color="#fff"
       />
       <Text color={"cyan"}>The pryer to return the money.....</Text>
-      {/** <Image source={{ uri: require("../assets/IMG_0328.JPG") }} /> */}
-      {/**  <XStack>
-        <Avatar circular>
-          <Avatar.Image src={require("../assets/IMG_0328.JPG")} />
-        </Avatar>
-      </XStack> */}
+
       <YStack gap={8}>
         <Input placeholder="Enter email" keyboardType="email-address" />
-        <TextArea placeholder="Enter message" p={4} />
+        <TextArea
+          placeholder="Enter message"
+          p={4}
+          onChangeText={(text) => {
+            console.log(text);
+          }}
+        />
         <Button
           size={"large"}
           bg="skyblue"

@@ -4,7 +4,12 @@ import { Checkbox, Label, XStack, YStack } from "tamagui";
 import { Check as CheckIcon } from "@tamagui/lucide-icons";
 
 import type { CheckboxProps } from "tamagui";
-export default function CheckboxComponent({ label, ...props }) {
+export default function CheckboxComponent({
+  label,
+  ...props
+}: {
+  label: string;
+}) {
   return (
     <XStack width={300} alignItems="center" gap="$2">
       <Checkbox

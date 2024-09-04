@@ -15,7 +15,9 @@ export default function NavigationContainerComponent() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="SignUp" component={SignUpForm} />
+          <Stack.Screen name="SignUp">
+            {() => <SignUpForm size={34} />}
+          </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     </AppContainer>

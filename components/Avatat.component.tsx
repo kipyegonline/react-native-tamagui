@@ -15,7 +15,9 @@ export default function AvatarComponent() {
       <Avatar circular size={125}>
         <Avatar.Image src={require("../assets/IMG_848rrr6.jpg")} />
       </Avatar>
-      <Paragraph fontWeight="600">Vincent</Paragraph>
+      <Paragraph fontWeight="700" color="#1e1e1e">
+        Vincent
+      </Paragraph>
     </XStack>
   );
 }
